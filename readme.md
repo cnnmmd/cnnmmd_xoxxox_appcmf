@@ -1,4 +1,4 @@
-# cnnmmd: cnnmmd_xoxxox_appcmf
+# cnnmmd_xoxxox_appcmf
 
 [eng (English)](#Overview) | [jpn (日本語)](#概要)
 
