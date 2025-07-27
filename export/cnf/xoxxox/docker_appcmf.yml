@@ -1,0 +1,13 @@
+networks:
+  default:
+    name: xoxxox_netmid
+    external: true
+services:
+  xoxxox_appcmf:
+    image: xoxxox_envcmf:001
+    container_name: xoxxox_appcmf
+    volumes:
+    - ../../../import/cnnmmd_xoxxox_appcmf/appcmf:/opt/appcmf
+    ports:
+    - 11001:80
+    command: bash -c "cd /opt/appcmf/ComfyUI && python main.py --listen --port 80 --cpu"
