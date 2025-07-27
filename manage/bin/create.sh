@@ -8,7 +8,7 @@ source "${pthcrr}"/params.sh
 pthapp="${pthsrc}"/appcmf
 srccmf='https://github.com/comfyanonymous/ComfyUI.git'
 pkgnod='comfyui_xoxxox_cnnmmd'
-srcnod="https://pubgit.xoxxox.net/${pkgnod}"
+srcnod="https://github.com/cnnmmd/${pkgnod}"
 
 test -d "${pthapp}" || mkdir "${pthapp}"
 
