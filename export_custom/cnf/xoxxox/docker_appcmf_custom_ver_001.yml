@@ -1,0 +1,10 @@
+services:
+  xoxxox_appcmf:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: ["gpu"]
+    command: bash -c "cd /opt/appcmf/ComfyUI && python main.py --listen --port 80 --preview-method taesd"
