@@ -4,7 +4,7 @@ networks:
     external: true
 services:
   xoxxox_appcmf:
-    image: xoxxox_envcmf:001
+    image: xoxxox/envcmf:001
     container_name: xoxxox_appcmf
     volumes:
     - ../../../import/cnnmmd_xoxxox_appcmf/appcmf:/opt/appcmf
