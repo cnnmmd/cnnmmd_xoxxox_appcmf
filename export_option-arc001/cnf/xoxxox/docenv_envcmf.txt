@@ -5,6 +5,6 @@ ENV OPTAPT=""
 RUN \
   apt-get ${OPTAPT} -y update && \
   apt-get ${OPTAPT} -y upgrade && \
-  apt-get ${OPTAPT} -y install --no-install-recommends python3 python3-pip python-is-python3 && \
+  apt-get ${OPTAPT} -y install python3 python3-pip python-is-python3 && \
   rm -rf /var/lib/apt/lists/*
 RUN pip3 install --no-cache-dir -r https://raw.githubusercontent.com/comfyanonymous/ComfyUI/master/requirements.txt
