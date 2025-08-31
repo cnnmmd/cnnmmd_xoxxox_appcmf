@@ -14,9 +14,9 @@ test -d "${pthapp}" || mkdir "${pthapp}"
 
 if test -d "${pthapp}"/ComfyUI
 then
-  cd "${pthapp}"/ComfyUI ; git pull
+  cd "${pthapp}"/ComfyUI && git pull
 else
-  cd "${pthapp}" ; git clone --depth 1 ${srccmf}
+  cd "${pthapp}" && git clone --depth 1 ${srccmf}
 fi
 
 if test -d "${pthapp}"/ComfyUI/custom_nodes/${pkgnod}
@@ -24,10 +24,12 @@ then
   cd "${pthapp}"/ComfyUI/custom_nodes/${pkgnod} && git pull
 else
   cd "${pthapp}"/ComfyUI/custom_nodes && git clone ${srcnod}
-  cd "${pthapp}"/ComfyUI/custom_nodes/${pkgnod}
-  cp -p lib/params_cmf_sample.py lib/params_cmf.py
-  cp -p lib/params_tlk_sample.py lib/params_tlk.py
-  cp -p web/lib/params_tlk_sample.js web/lib/params_tlk.js
+  if cd "${pthapp}"/ComfyUI/custom_nodes/${pkgnod}
+  then
+    cp -p lib/params_cmf_sample.py lib/params_cmf.py
+    cp -p lib/params_tlk_sample.py lib/params_tlk.py
+    cp -p web/lib/params_tlk_sample.js web/lib/params_tlk.js
+  fi
 fi
 
 addimg ${imgtgt} "${cnfimg}" "${pthdoc}"
